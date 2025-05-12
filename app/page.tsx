@@ -1,0 +1,451 @@
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Utensils, ShoppingBag, Clock, CheckCircle } from "lucide-react"
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <header className="sticky top-0 z-50 w-full border-b bg-white">
+        <div className="container flex h-16 items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Utensils className="h-6 w-6 text-green-500" />
+            <span className="text-xl font-bold text-green-600">FoodRescue</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href="#how-it-works" className="text-sm font-medium text-gray-600 hover:text-green-600">
+              How It Works
+            </Link>
+            <Link href="#benefits" className="text-sm font-medium text-gray-600 hover:text-green-600">
+              Benefits
+            </Link>
+            <Link href="#mission" className="text-sm font-medium text-gray-600 hover:text-green-600">
+              Our Mission
+            </Link>
+            <Link href="#contact" className="text-sm font-medium text-gray-600 hover:text-green-600">
+              Contact
+            </Link>
+          </nav>
+          <div className="flex items-center gap-4">
+            <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-green-600">
+              Login
+            </Link>
+            <Link href="/register-business">
+              <Button className="bg-green-500 hover:bg-green-600">Register Business</Button>
+            </Link>
+          </div>
+        </div>
+      </header>
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-green-50">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
+                    Don't Let Good Food Go to Waste
+                  </h1>
+                  <p className="max-w-[600px] text-gray-600 md:text-xl">
+                    India stands among the world's second largest contributors to food wastage. Join us in our mission
+                    to inspire and empower everyone to fight food waste together.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Link href="/register-business">
+                    <Button className="bg-green-500 hover:bg-green-600">
+                      List Your Surplus Food
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                  <Link href="#how-it-works">
+                    <Button variant="outline" className="border-green-500 text-green-600 hover:bg-green-50">
+                      Learn How It Works
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <img
+                src="https://goodtograb.com/web/img/pic1-new.png?height=400&width=600"
+                alt="Food rescue illustration"
+                width={600}
+                height={400}
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-vanilla-50">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
+                  How It Works
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl">
+                  A simple process to rescue surplus food and reduce waste
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-sm border border-green-100">
+                <div className="p-3 bg-green-100 rounded-full">
+                  <ShoppingBag className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-green-700">Businesses List Surplus</h3>
+                <p className="text-gray-600 text-center">
+                  Restaurants, grocery stores, and bakeries list their surplus food that would otherwise go to waste.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-sm border border-green-100">
+                <div className="p-3 bg-green-100 rounded-full">
+                  <Clock className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-green-700">Users Reserve Food</h3>
+                <p className="text-gray-600 text-center">
+                  People browse available surplus food near them and reserve items they want to rescue.
+                </p>
+              </div>
+              <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-sm border border-green-100">
+                <div className="p-3 bg-green-100 rounded-full">
+                  <CheckCircle className="h-8 w-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-green-700">Pickup & Enjoy</h3>
+                <p className="text-gray-600 text-center">
+                  Users pick up their reserved food during the specified time window and enjoy quality food at a reduced
+                  price.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section id="benefits" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
+                  Benefits for Everyone
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl">
+                  Our platform creates value for businesses, consumers, and the environment
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+              <div className="space-y-4 p-6 bg-green-50 rounded-lg">
+                <h3 className="text-2xl font-bold text-green-700">For Businesses</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Reduce food waste and associated costs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Generate additional revenue from surplus food</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Attract new customers to your business</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Enhance your brand's sustainability credentials</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-4 p-6 bg-green-50 rounded-lg">
+                <h3 className="text-2xl font-bold text-green-700">For Consumers</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Access quality food at reduced prices</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Discover new local businesses and food options</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Make a positive environmental impact with every purchase</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
+                    <span className="text-gray-600">Join a community committed to reducing food waste</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission Section */}
+        <section id="mission" className="w-full py-12 md:py-24 lg:py-32 bg-green-50">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <img
+                src="https://goodtograb.com/web/img/pic4.png"
+                alt="Food waste reduction"
+                width={600}
+                height={400}
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+              />
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
+                    Our Vision
+                  </h2>
+                  <p className="max-w-[600px] text-gray-600 md:text-xl">
+                    A major contribution of good food that has been wasted comes from hotels, restaurants, catering,
+                    supermarkets, and it is a big problem, and we can be a solution.
+                  </p>
+                  <p className="max-w-[600px] text-gray-600 md:text-xl mt-4">
+                    Our surplus food app allows you to rescue unsold food from being wasted at your favorite places like
+                    restaurants, grocery stores, and bakeries.
+                  </p>
+                </div>
+                <div className="bg-white p-4 rounded-lg border border-green-100 mt-4">
+                  <div className="text-2xl font-bold text-green-700 mb-2">Food Waste in India</div>
+                  <p className="text-gray-600">
+                    India stands among the world's second largest contributors to food wastage, with approximately 40%
+                    of produced food going to waste. Together, we can change this statistic.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-vanilla-100">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
+                  Join the Food Rescue Movement
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl">
+                  Whether you're a business with surplus food or someone who wants to help reduce waste, there's a place
+                  for you in our community.
+                </p>
+              </div>
+              <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
+                <Link href="/register-business">
+                  <Button className="bg-green-500 hover:bg-green-600 text-lg px-8 py-6">
+                    Register Your Business
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="border-green-500 text-green-600 hover:bg-green-50 text-lg px-8 py-6"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
+                    Get in Touch
+                  </h2>
+                  <p className="max-w-[600px] text-gray-600 md:text-xl">
+                    Have questions about how our platform works? Want to learn more about how your business can benefit?
+                    We're here to help.
+                  </p>
+                </div>
+                <div className="space-y-4 mt-4">
+                  <div className="flex items-center gap-2">
+                    <div className="p-2 bg-green-100 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-5 w-5 text-green-600"
+                      >
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-600">+91 123 456 7890</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="p-2 bg-green-100 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-5 w-5 text-green-600"
+                      >
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-600">contact@foodrescue.in</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="p-2 bg-green-100 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-5 w-5 text-green-600"
+                      >
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                        <circle cx="12" cy="10" r="3" />
+                      </svg>
+                    </div>
+                    <span className="text-gray-600">Mumbai, Maharashtra, India</span>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4 p-6 bg-green-50 rounded-lg">
+                <h3 className="text-2xl font-bold text-green-700">Send Us a Message</h3>
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium text-gray-600">
+                        Name
+                      </label>
+                      <input
+                        id="name"
+                        placeholder="Your name"
+                        className="w-full rounded-md border border-gray-300 p-2 text-gray-600 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium text-gray-600">
+                        Email
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        placeholder="Your email"
+                        className="w-full rounded-md border border-gray-300 p-2 text-gray-600 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="text-sm font-medium text-gray-600">
+                      Subject
+                    </label>
+                    <input
+                      id="subject"
+                      placeholder="Subject"
+                      className="w-full rounded-md border border-gray-300 p-2 text-gray-600 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium text-gray-600">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      placeholder="Your message"
+                      className="h-32 w-full rounded-md border border-gray-300 p-2 text-gray-600 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    ></textarea>
+                  </div>
+                  <Button className="w-full bg-green-500 hover:bg-green-600">Send Message</Button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer className="w-full border-t bg-green-50 py-6">
+        <div className="container flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
+          <div className="flex items-center gap-2">
+            <Utensils className="h-6 w-6 text-green-500" />
+            <span className="text-xl font-bold text-green-600">FoodRescue</span>
+          </div>
+          <p className="text-center text-sm text-gray-600 md:text-left">
+            © 2023 FoodRescue. All rights reserved. Fighting food waste together.
+          </p>
+          <div className="flex items-center gap-4">
+            <Link href="#" className="text-gray-600 hover:text-green-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+              <span className="sr-only">Facebook</span>
+            </Link>
+            <Link href="#" className="text-gray-600 hover:text-green-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link href="#" className="text-gray-600 hover:text-green-600">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+              </svg>
+              <span className="sr-only">Twitter</span>
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
