@@ -16,7 +16,7 @@ export default function RegisterBusiness() {
             <Link href="/">
               <div className="flex items-center gap-2">
                 <Utensils className="h-6 w-6 text-green-500" />
-                <span className="text-xl font-bold text-green-600">FoodRescue</span>
+                <span className="text-xl font-bold text-green-600">ZeroLeft</span>
               </div>
             </Link>
           </div>
@@ -183,10 +183,10 @@ export default function RegisterBusiness() {
         <div className="container flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
           <div className="flex items-center gap-2">
             <Utensils className="h-6 w-6 text-green-500" />
-            <span className="text-xl font-bold text-green-600">FoodRescue</span>
+            <span className="text-xl font-bold text-green-600">ZeroLeft</span>
           </div>
           <p className="text-center text-sm text-gray-600 md:text-left">
-            © 2023 FoodRescue. All rights reserved. Fighting food waste together.
+            © 2025 ZeroLeft. All rights reserved. Fighting food waste together.
           </p>
         </div>
       </footer>

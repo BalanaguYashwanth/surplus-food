@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Utensils, ShoppingBag, Clock, CheckCircle } from "lucide-react"
+import heroSection from "@/public/hero_section.jpg";
+import { TestimonialCard } from "@/components/ui/testimonial-card";
 
 export default function Home() {
   return (
@@ -9,7 +11,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Utensils className="h-6 w-6 text-green-500" />
-            <span className="text-xl font-bold text-green-600">FoodRescue</span>
+            <span className="text-xl font-bold text-green-600">ZeroLeft</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <Link href="#how-it-works" className="text-sm font-medium text-gray-600 hover:text-green-600">
@@ -20,6 +22,9 @@ export default function Home() {
             </Link>
             <Link href="#mission" className="text-sm font-medium text-gray-600 hover:text-green-600">
               Our Mission
+            </Link>
+            <Link href="#testimonials" className="text-sm font-medium text-gray-600 hover:text-green-600">
+              Testimonials
             </Link>
             <Link href="#contact" className="text-sm font-medium text-gray-600 hover:text-green-600">
               Contact
@@ -43,29 +48,29 @@ export default function Home() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
-                    Don't Let Good Food Go to Waste
+                    Turn Extra Food Into Extra Smiles
                   </h1>
                   <p className="max-w-[600px] text-gray-600 md:text-xl">
-                    India stands among the world's second largest contributors to food wastage. Join us in our mission
-                    to inspire and empower everyone to fight food waste together.
+                    Save delicious meals from going to waste—at up to 70% off.
+                    Rescue surplus food from your favorite restaurants, bakeries, and cafes.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href="/register-business">
                     <Button className="bg-green-500 hover:bg-green-600">
-                      List Your Surplus Food
+                      Order a Magic Bag
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link href="#how-it-works">
                     <Button variant="outline" className="border-green-500 text-green-600 hover:bg-green-50">
-                      Learn How It Works
+                      Join as a Restaurant
                     </Button>
                   </Link>
                 </div>
               </div>
               <img
-                src="https://goodtograb.com/web/img/pic1-new.png?height=400&width=600"
+                src={heroSection.src}
                 alt="Food rescue illustration"
                 width={600}
                 height={400}
@@ -81,7 +86,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
-                  How It Works
+                  How ZeroLeft Works
                 </h2>
                 <p className="max-w-[900px] text-gray-600 md:text-xl">
                   A simple process to rescue surplus food and reduce waste
@@ -93,28 +98,27 @@ export default function Home() {
                 <div className="p-3 bg-green-100 rounded-full">
                   <ShoppingBag className="h-8 w-8 text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold text-green-700">Businesses List Surplus</h3>
+                <h3 className="text-xl font-bold text-green-700">Discover</h3>
                 <p className="text-gray-600 text-center">
-                  Restaurants, grocery stores, and bakeries list their surplus food that would otherwise go to waste.
+                  Browse available surplus meals from top-rated food spots near you.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-sm border border-green-100">
                 <div className="p-3 bg-green-100 rounded-full">
                   <Clock className="h-8 w-8 text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold text-green-700">Users Reserve Food</h3>
+                <h3 className="text-xl font-bold text-green-700">Save</h3>
                 <p className="text-gray-600 text-center">
-                  People browse available surplus food near them and reserve items they want to rescue.
+                  Grab your “Magic Bag” at a big discount—fresh, safe, and ready to go.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-sm border border-green-100">
                 <div className="p-3 bg-green-100 rounded-full">
                   <CheckCircle className="h-8 w-8 text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold text-green-700">Pickup & Enjoy</h3>
+                <h3 className="text-xl font-bold text-green-700">Enjoy & Impact</h3>
                 <p className="text-gray-600 text-center">
-                  Users pick up their reserved food during the specified time window and enjoy quality food at a reduced
-                  price.
+                  Pick it up, enjoy the meal, and feel good knowing you helped reduce food waste.
                 </p>
               </div>
             </div>
@@ -224,29 +228,75 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
-                  Join the Food Rescue Movement
+                  Rescue Your First Meal Today
                 </h2>
                 <p className="max-w-[900px] text-gray-600 md:text-xl">
-                  Whether you're a business with surplus food or someone who wants to help reduce waste, there's a place
-                  for you in our community.
+                  Join thousands of users who are saving the planet—one bite at a time.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
-                <Link href="/register-business">
+                <Link href="/app-download">
                   <Button className="bg-green-500 hover:bg-green-600 text-lg px-8 py-6">
-                    Register Your Business
+                    Download the App
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/contact">
+                <Link href="/order-meal">
                   <Button
                     variant="outline"
                     className="border-green-500 text-green-600 hover:bg-green-50 text-lg px-8 py-6"
                   >
-                    Contact Us
+                    Order a Meal
+                  </Button>
+                </Link>
+                <Link href="/become-partner">
+                  <Button
+                    variant="outline"
+                    className="border-green-500 text-green-600 hover:bg-green-50 text-lg px-8 py-6"
+                  >
+                    Become a Partner
                   </Button>
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-vanilla-50">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
+                  What People Are Saying
+                </h2>
+                <p className="max-w-[900px] text-gray-600 md:text-xl">
+                  Hear from our community of businesses and customers
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              <TestimonialCard
+                name="Aarav Sharma"
+                role="Regular Customer"
+                rating={5}
+                testimonial="I've discovered so many amazing restaurants through ZeroLeft and saved money while reducing waste. The quality is always excellent!"
+                initials="AS"
+              />
+              <TestimonialCard
+                name="Priya Kapoor"
+                role="Cafe Owner"
+                rating={5}
+                testimonial="ZeroLeft has helped us reduce our food waste by 30% while bringing in new customers. It's a win-win for our business and the planet."
+                initials="PK"
+              />
+              <TestimonialCard
+                name="Rahul Mehta"
+                role="Food Enthusiast"
+                rating={4}
+                testimonial="As someone who cares about sustainability, I love that I can enjoy great food while making a positive impact. The app is easy to use too!"
+                initials="RM"
+              />
             </div>
           </div>
         </section>
@@ -303,7 +353,7 @@ export default function Home() {
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600">contact@foodrescue.in</span>
+                    <span className="text-gray-600">contact@zeroleft.in</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="p-2 bg-green-100 rounded-full">
@@ -323,7 +373,7 @@ export default function Home() {
                         <circle cx="12" cy="10" r="3" />
                       </svg>
                     </div>
-                    <span className="text-gray-600">Mumbai, Maharashtra, India</span>
+                    <span className="text-gray-600">Bangalore, India</span>
                   </div>
                 </div>
               </div>
@@ -384,10 +434,10 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
           <div className="flex items-center gap-2">
             <Utensils className="h-6 w-6 text-green-500" />
-            <span className="text-xl font-bold text-green-600">FoodRescue</span>
+            <span className="text-xl font-bold text-green-600">ZeroLeft</span>
           </div>
           <p className="text-center text-sm text-gray-600 md:text-left">
-            © 2023 FoodRescue. All rights reserved. Fighting food waste together.
+            © 2025 ZeroLeft. All rights reserved. Fighting food waste together.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-gray-600 hover:text-green-600">
