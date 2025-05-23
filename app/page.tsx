@@ -11,7 +11,7 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <Utensils className="h-6 w-6 text-green-500" />
-            <span className="text-xl font-bold text-green-600">ZeroLeft</span>
+            <span className="text-xl font-bold text-green-600">Hungrify</span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
             <Link href="#how-it-works" className="text-sm font-medium text-gray-600 hover:text-green-600">
@@ -31,9 +31,9 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-green-600">
+            {/* <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-green-600">
               Login
-            </Link>
+            </Link> */}
             <Link href="/register-business">
               <Button className="bg-green-500 hover:bg-green-600">Register Business</Button>
             </Link>
@@ -51,8 +51,7 @@ export default function Home() {
                     Turn Extra Food Into Extra Smiles
                   </h1>
                   <p className="max-w-[600px] text-gray-600 md:text-xl">
-                    Save delicious meals from going to waste—at up to 70% off.
-                    Rescue surplus food from your favorite restaurants, bakeries, and cafes.
+                    Tasty deals, no compromise. Enjoy food from your favorite places — up to 70% off!
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -72,9 +71,7 @@ export default function Home() {
               <img
                 src={heroSection.src}
                 alt="Food rescue illustration"
-                width={600}
-                height={400}
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
+                className="w-full h-full max-h-[400px] max-w-[600] object-cover rounded-xl shadow-lg"
               />
             </div>
           </div>
@@ -86,7 +83,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
-                  How ZeroLeft Works
+                  How Hungrify Works
                 </h2>
                 <p className="max-w-[900px] text-gray-600 md:text-xl">
                   A simple process to rescue surplus food and reduce waste
@@ -100,7 +97,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-green-700">Discover</h3>
                 <p className="text-gray-600 text-center">
-                  Browse available surplus meals from top-rated food spots near you.
+                  Browse available food deals from top-rated food spots near you.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-4 p-6 bg-white rounded-lg shadow-sm border border-green-100">
@@ -131,7 +128,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
-                  Benefits for Everyone
+                  Why Choose Hungrify ?
                 </h2>
                 <p className="max-w-[900px] text-gray-600 md:text-xl">
                   Our platform creates value for businesses, consumers, and the environment
@@ -144,11 +141,11 @@ export default function Home() {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-                    <span className="text-gray-600">Reduce food waste and associated costs</span>
+                    <span className="text-gray-600">Unlock new revenue by offering fresh fusion food</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-                    <span className="text-gray-600">Generate additional revenue from surplus food</span>
+                    <span className="text-gray-600">Boost profits while serving more happy customers</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
@@ -177,7 +174,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="h-5 w-5 text-green-600 mt-0.5" />
-                    <span className="text-gray-600">Join a community committed to reducing food waste</span>
+                    <span className="text-gray-600">Join a growing community making every meal count</span>
                   </li>
                 </ul>
               </div>
@@ -202,19 +199,14 @@ export default function Home() {
                     Our Vision
                   </h2>
                   <p className="max-w-[600px] text-gray-600 md:text-xl">
-                    A major contribution of good food that has been wasted comes from hotels, restaurants, catering,
-                    supermarkets, and it is a big problem, and we can be a solution.
+                    We empower everyone to enjoy delicious, surplus food from your favorite spots such as restaurants, grocery stores, and bakeries, giving great meals a second chance to delight you!
                   </p>
-                  <p className="max-w-[600px] text-gray-600 md:text-xl mt-4">
-                    Our surplus food app allows you to rescue unsold food from being wasted at your favorite places like
-                    restaurants, grocery stores, and bakeries.
-                  </p>
+                  
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-green-100 mt-4">
-                  <div className="text-2xl font-bold text-green-700 mb-2">Food Waste in India</div>
+                  <div className="text-2xl font-bold text-green-700 mb-2">Food Shortage in India</div>
                   <p className="text-gray-600">
-                    India stands among the world's second largest contributors to food wastage, with approximately 40%
-                    of produced food going to waste. Together, we can change this statistic.
+                    India faces a significant food shortage challenge, with around 40% of produced food not reaching those who need it. Every day, 30% of cooked food and 20% of restaurant meals are wasted in India — a $14 billion problem we can help solve.. Together, we can turn this around.
                   </p>
                 </div>
               </div>
@@ -280,14 +272,14 @@ export default function Home() {
                 name="Aarav Sharma"
                 role="Regular Customer"
                 rating={5}
-                testimonial="I've discovered so many amazing restaurants through ZeroLeft and saved money while reducing waste. The quality is always excellent!"
+                testimonial="I've discovered so many amazing restaurants through Hungrify and saved money while reducing waste. The quality is always excellent!"
                 initials="AS"
               />
               <TestimonialCard
                 name="Priya Kapoor"
                 role="Cafe Owner"
                 rating={5}
-                testimonial="ZeroLeft has helped us reduce our food waste by 30% while bringing in new customers. It's a win-win for our business and the planet."
+                testimonial="Hungrify has helped us reduce our food waste by 30% while bringing in new customers. It's a win-win for our business and the planet."
                 initials="PK"
               />
               <TestimonialCard
@@ -353,7 +345,7 @@ export default function Home() {
                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600">contact@zeroleft.in</span>
+                    <span className="text-gray-600">contact@hungrify.in</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="p-2 bg-green-100 rounded-full">
@@ -434,10 +426,10 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
           <div className="flex items-center gap-2">
             <Utensils className="h-6 w-6 text-green-500" />
-            <span className="text-xl font-bold text-green-600">ZeroLeft</span>
+            <span className="text-xl font-bold text-green-600">Hungrify</span>
           </div>
           <p className="text-center text-sm text-gray-600 md:text-left">
-            © 2025 ZeroLeft. All rights reserved. Fighting food waste together.
+            © 2025 Hungrify. All rights reserved. Fighting food waste together.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-gray-600 hover:text-green-600">
