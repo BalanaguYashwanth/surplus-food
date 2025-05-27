@@ -31,6 +31,7 @@ export default function Home() {
             </Link>
           </nav>
           <div className="flex items-center gap-4">
+            {/* TODO - Need to uncomment in future development */}
             {/* <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-green-600">
               Login
             </Link> */}

@@ -9,7 +9,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { ArrowLeft, Utensils } from "lucide-react"
-import { submitToSheet } from "@/lib/submitToSheet"
 
 export default function RegisterBusiness() {
   const [submitting, setSubmitting] = useState(false);
@@ -58,7 +57,13 @@ export default function RegisterBusiness() {
   
     try {
       setSubmitting(true);
-      await submitToSheet(data);
+      await fetch("/api/submit-to-sheet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
       router.push("/");
     } catch (error) {
       console.error("Failed to store:", error);
