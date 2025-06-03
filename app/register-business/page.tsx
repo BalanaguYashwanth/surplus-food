@@ -1,4 +1,7 @@
+"use client"
 import Link from "next/link"
+import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -8,6 +11,67 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { ArrowLeft, Utensils } from "lucide-react"
 
 export default function RegisterBusiness() {
+  const [submitting, setSubmitting] = useState(false);
+  const [businessType, setBusinessType] = useState("");
+  const [frequency, setFrequency] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [termsAgreed, setTermsAgreed] = useState(false);
+  const router = useRouter();
+
+  const getInputValue = (id: string): string => {
+    const el = document.getElementById(id) as HTMLInputElement | HTMLTextAreaElement | null;
+    return el?.value.trim() ?? "";
+  };
+
+  const validateFormData = (data: Record<string, string>): boolean => {
+    return !Object.values(data).some(val => val === "" || val === "No");
+  };
+
+  const buildFormData = (): Record<string, string> => {
+    return {
+      businessName: getInputValue("business-name"),
+      businessType,          
+      address: getInputValue("address"),
+      city: getInputValue("city"),
+      pincode: getInputValue("pincode"),
+      contactName: getInputValue("contact-name"),
+      position: getInputValue("position"),
+      email: getInputValue("email"),
+      phone: getInputValue("phone"),
+      surplusType: getInputValue("surplus-type"),
+      frequency,
+      quantity,
+      termsAgreed: termsAgreed ? "Yes" : "No",
+    };
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+  
+    const data = buildFormData();
+  
+    if (!validateFormData(data)) {
+      alert("Please fill in all fields and accept the terms.");
+      return;
+    }
+  
+    try {
+      setSubmitting(true);
+      await fetch("/api/submit-to-sheet", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      router.push("/");
+    } catch (error) {
+      console.error("Failed to store:", error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -16,7 +80,7 @@ export default function RegisterBusiness() {
             <Link href="/">
               <div className="flex items-center gap-2">
                 <Utensils className="h-6 w-6 text-green-500" />
-                <span className="text-xl font-bold text-green-600">ZeroLeft</span>
+                <span className="text-xl font-bold text-green-600">Hungrify</span>
               </div>
             </Link>
           </div>
@@ -39,7 +103,7 @@ export default function RegisterBusiness() {
                 Join our network of businesses fighting food waste and making a difference
               </p>
             </div>
-            <div className="space-y-6 p-6 bg-green-50 rounded-lg">
+            <div className="space-y-6 p-6 bg-green-50 rounded-lg" onSubmit={handleSubmit}>
               <form className="space-y-6">
                 <div className="space-y-4">
                   <h2 className="text-xl font-semibold text-green-700">Business Information</h2>
@@ -50,7 +114,7 @@ export default function RegisterBusiness() {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="business-type">Business Type</Label>
-                      <Select>
+                      <Select value={businessType} onValueChange={setBusinessType}>
                         <SelectTrigger id="business-type">
                           <SelectValue placeholder="Select business type" />
                         </SelectTrigger>
@@ -118,7 +182,7 @@ export default function RegisterBusiness() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="frequency">How frequently do you have surplus food?</Label>
-                    <Select>
+                    <Select value={frequency} onValueChange={setFrequency}>
                       <SelectTrigger id="frequency">
                         <SelectValue placeholder="Select frequency" />
                       </SelectTrigger>
@@ -134,7 +198,7 @@ export default function RegisterBusiness() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="quantity">Estimated quantity of surplus food (per occurrence)</Label>
-                    <Select>
+                    <Select value={quantity} onValueChange={setQuantity}>
                       <SelectTrigger id="quantity">
                         <SelectValue placeholder="Select quantity" />
                       </SelectTrigger>
@@ -150,7 +214,7 @@ export default function RegisterBusiness() {
 
                 <div className="space-y-4">
                   <div className="flex items-start space-x-2">
-                    <Checkbox id="terms" />
+                    <Checkbox id="terms" checked={termsAgreed} onCheckedChange={(checked) => setTermsAgreed(checked === true)} />
                     <div className="grid gap-1.5 leading-none">
                       <label
                         htmlFor="terms"
@@ -173,7 +237,7 @@ export default function RegisterBusiness() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-green-500 hover:bg-green-600">Register Business</Button>
+                <Button className="w-full bg-green-500 hover:bg-green-600" type="submit" disabled={submitting}>{submitting ? "Registering..." : "Register Business"}</Button>
               </form>
             </div>
           </div>
@@ -183,10 +247,10 @@ export default function RegisterBusiness() {
         <div className="container flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between">
           <div className="flex items-center gap-2">
             <Utensils className="h-6 w-6 text-green-500" />
-            <span className="text-xl font-bold text-green-600">ZeroLeft</span>
+            <span className="text-xl font-bold text-green-600">Hungrify</span>
           </div>
           <p className="text-center text-sm text-gray-600 md:text-left">
-            © 2025 ZeroLeft. All rights reserved. Fighting food waste together.
+            © 2025 Hungrify. All rights reserved. Fighting food waste together.
           </p>
         </div>
       </footer>
