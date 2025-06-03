@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Utensils, ShoppingBag, Clock, CheckCircle } from "lucide-react"
-import heroSection from "@/public/hero_section.jpg";
+import heroSection from "@/public/hero_section_v2.png";
 import { TestimonialCard } from "@/components/ui/testimonial-card";
 
 export default function Home() {
@@ -44,7 +44,7 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-green-50">
-          <div className="container px-4 md:px-6">
+          <div className="container px-4 md:px-12">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
@@ -57,23 +57,19 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href="/register-business">
-                    <Button className="bg-green-500 hover:bg-green-600">
-                      Order a Magic Bag
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link href="#how-it-works">
                     <Button variant="outline" className="border-green-500 text-green-600 hover:bg-green-50">
-                      Join as a Restaurant
+                      Become a Partner
                     </Button>
                   </Link>
                 </div>
               </div>
-              <img
-                src={heroSection.src}
-                alt="Food rescue illustration"
-                className="w-full h-full max-h-[400px] max-w-[600] object-cover rounded-xl shadow-lg"
-              />
+              <div className="flex justify-end">
+                <img
+                  src={heroSection.src}
+                  alt="Food rescue illustration"
+                  className="w-full h-full max-h-[400px] max-w-[500px] rounded-xl"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -187,13 +183,15 @@ export default function Home() {
         <section id="mission" className="w-full py-12 md:py-24 lg:py-32 bg-green-50">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <img
-                src="https://goodtograb.com/web/img/pic4.png"
-                alt="Food waste reduction"
-                width={600}
-                height={400}
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-              />
+              <div className="relative w-full max-w-[500px] h-[300px] md:h-[500px] mx-auto">
+                <img
+                  src="https://goodtograb.com/web/img/pic4.png"
+                  alt="Food waste reduction"
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-contain rounded-xl"
+                />
+              </div>
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-green-700">
@@ -202,7 +200,6 @@ export default function Home() {
                   <p className="max-w-[600px] text-gray-600 md:text-xl">
                     We empower everyone to enjoy delicious, surplus food from your favorite spots such as restaurants, grocery stores, and bakeries, giving great meals a second chance to delight you!
                   </p>
-                  
                 </div>
                 <div className="bg-white p-4 rounded-lg border border-green-100 mt-4">
                   <div className="text-2xl font-bold text-green-700 mb-2">Food Shortage in India</div>
@@ -228,21 +225,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row mt-6">
-                <Link href="/app-download">
-                  <Button className="bg-green-500 hover:bg-green-600 text-lg px-8 py-6">
-                    Download the App
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/order-meal">
-                  <Button
-                    variant="outline"
-                    className="border-green-500 text-green-600 hover:bg-green-50 text-lg px-8 py-6"
-                  >
-                    Order a Meal
-                  </Button>
-                </Link>
-                <Link href="/become-partner">
+                <Link href="/register-business">
                   <Button
                     variant="outline"
                     className="border-green-500 text-green-600 hover:bg-green-50 text-lg px-8 py-6"
@@ -326,7 +309,7 @@ export default function Home() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
                     </div>
-                    <span className="text-gray-600">+91 123 456 7890</span>
+                    <a href="tel:+917395993858" className="text-gray-600 hover:text-green-600">+91 73959 93858</a>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="p-2 bg-green-100 rounded-full">
